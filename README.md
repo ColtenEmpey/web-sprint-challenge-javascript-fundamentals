@@ -25,15 +25,27 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read.
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
+    .map:
+        this method creates a new array from a given array. it takes the given array and checks to see if it meets specified criteria(if it passes a logical test that you create)
+        for exampl: if I had an array of objects named "family" and I want to make a new array that includes the name and age of everyone in my house who is older than 8.(excluding their birthday and favorite sport) 
+    .reduce: 
+        this method helps you to take a large amount of data and reduce it into a single intiger.
+        for example: using said array we would be able to find the sum of all my family's ages. this method becomes perticularly usefull if you need the average age of a family or perhaps average income for entry level web developers.
 
+    .filter: 
+        like .map, this method creates a new array from a given array. However, when using the .filter method you pass the entire contents of an array instence to the new array. (you cannot specify what info is passed)
+        for example: if I had the same array of objects "family and filtered it to only include people older than 8, it would pass in the entire object (person) including name, age, birthday, and favorite sport into the new array.
 2. Explain the difference between a callback and a higher order function.
-
+    A higher order function is a function taht recieves a callback function as a peramiter. a callback function is a function that is passed as a peramiter.
 3. Explain what a closure is.
-
+    
 4. Describe the four principles of the 'this' keyword.
-
+    1. window:
+    2. implicite:
+    3. explicite:
+    4.
 5. Why do we need super() in an extended class?
-
+    super(x,y) is a command built into JavaScript so that we can inherrit x and y from a parent class. This is especially helpful when a subclass inherrits methods from a parent class.
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
 ## Instructions
