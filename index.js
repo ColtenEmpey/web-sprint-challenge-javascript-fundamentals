@@ -16,6 +16,11 @@ function myFunction() {
 myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
+//Function and global scope funtion like a river. In JavaScript information flows one way
+//and is accessible further down stream but not upstream. in this case, globel scope will always
+//be accessible and is always downstream. However, if we wish to access a variable we cannot go 
+//fight the current and go up-stream. (sometimes this is confusing because as we scroll down a 
+//JS file it's natural to think "If I am refferring to something above me it is down stream").
 
 
 
@@ -28,11 +33,15 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(number) {
+  let sum = 0
+  for (let i = 0 ;i < number;i++){
+    sum += (number - i)
   }
- 
+  // console.log(sum)
+  return sum
+  }
+//  summation(4)
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -56,10 +65,14 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(array){
+    let displayNames = []
+    array.forEach(animal => {
+      displayNames.push("name: " + animal.animal_name + ", scientific: " + animal.scientific_name)
+    });
+    return displayNames
   }
-  
+  // console.log(animalNames(zooAnimals))
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -67,19 +80,30 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(array){
+    let lowerCaseNames = []
+    array.map(animal => {
+      lowerCaseNames.push(animal.animal_name.toLowerCase() , animal.scientific_name.toLowerCase())
+    });
+    // console.log(lowerCaseNames)
+    return lowerCaseNames
   }
-  
+  // lowerCaseNames(zooAnimals)
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(array){
+    let newArray = array.filter(animal => {
+      if( animal.population < 5){
+        return animal
+      }
+    });
+    return newArray
   }
+  // console.log(lowPopulationAnimals(zooAnimals))
   
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
@@ -88,10 +112,14 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(array){
+    let sum = array.reduce( (total,currentValue) =>{
+      return total + currentValue.population
+    },0)
+    // console.log(sum) 
+    return sum
   }
-  
+  // USApop(zooAnimals)
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
