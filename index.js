@@ -23,8 +23,7 @@ myFunction();
 //JS file it's natural to think "If I am refferring to something above me it is down stream").
 //For a variable to be accessible it must be either globaly scoped or inside the funciton where it is being used.
 
-
-
+//Test change
 
 
 
