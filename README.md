@@ -38,12 +38,12 @@ Edit this document to include your answers after each question. Make sure to lea
 2. Explain the difference between a callback and a higher order function.
     A higher order function is a function taht recieves a callback function as a peramiter. a callback function is a function that is passed as a peramiter.
 3. Explain what a closure is.
-    
+    closure is where a veriable lives, a global variable can be accessed from anywhere while a scoped variable must be accessed inside the code block. these can be used to different effects when using for and while loops.
 4. Describe the four principles of the 'this' keyword.
-    1. window:
-    2. implicite:
-    3. explicite:
-    4.
+    1. window binding: window scope is when you use "this" as a global variable and will refer to JS it's self.
+    2. implicite binding: when you use "this" to reffer to the thing before the dot (ex. ARRAY.this).
+    3. explicite binding: this is when you use .call, .apply, or .bind toa pass in the objective of this.
+    4. new binding: when using a constructor function "this" will reffer to the new object.
 5. Why do we need super() in an extended class?
     super(x,y) is a command built into JavaScript so that we can inherrit x and y from a parent class. This is especially helpful when a subclass inherrits methods from a parent class.
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
